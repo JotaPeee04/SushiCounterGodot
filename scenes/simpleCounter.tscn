@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://b201giqeqb31y"]
+
+[ext_resource type="Script" uid="uid://b88aq18kykx" path="res://scenes/scripts/simple_counter.gd" id="1_1pmat"]
+[ext_resource type="FontFile" uid="uid://dgqgmd8wtphp8" path="res://fonts/comfy_feeling/Comfy Feeling.otf" id="1_w4w8q"]
+
+[node name="SimpleCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1pmat")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.752941, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -82.0
+offset_right = 39.5
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_w4w8q")
+theme_override_font_sizes/font_size = 128
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
