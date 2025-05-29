@@ -5,6 +5,7 @@ var counter = 0
 var touch_start_position = Vector2.ZERO
 var touch_end_position = Vector2.ZERO
 
+#cambiar _gui_input por _input cuando lo haga online
 
 func _gui_input(event):
 	
@@ -18,7 +19,7 @@ func _gui_input(event):
 		else:
 			touch_end_position = event.position
 			var swipe_vector = touch_end_position - touch_start_position
-			print_debug(swipe_vector.length())
+			
 			if swipe_vector.length() > 100: # Threshold to avoid accidental swipes
 				
 				counter -= 1

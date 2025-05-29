@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctbry30e8xpb0"]
+[gd_scene load_steps=4 format=3 uid="uid://ctbry30e8xpb0"]
 
+[ext_resource type="Script" uid="uid://b5lmvukhvtiio" path="res://scenes/scripts/multiple_counters.gd" id="1_sklu0"]
 [ext_resource type="PackedScene" uid="uid://b201giqeqb31y" path="res://scenes/simpleCounter.tscn" id="1_tevug"]
+[ext_resource type="PackedScene" uid="uid://3v0mx6dyxs70" path="res://scenes/v_box_god.tscn" id="2_sklu0"]
 
 [node name="MultipleCounters" type="Node"]
+script = ExtResource("1_sklu0")
+numJugadores = 8
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -20,7 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Grid" type="GridContainer" parent="Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,12 +32,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SimpleCounter" parent="Control/Grid" instance=ExtResource("1_tevug")]
+[node name="VBoxContainer" parent="Control/HBoxContainer" instance=ExtResource("2_sklu0")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="SimpleCounter2" parent="Control/Grid" instance=ExtResource("1_tevug")]
+[node name="SimpleCounter" parent="Control/HBoxContainer/VBoxContainer" instance=ExtResource("1_tevug")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3

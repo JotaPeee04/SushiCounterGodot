@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://3v0mx6dyxs70"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+size_flags_horizontal = 3
