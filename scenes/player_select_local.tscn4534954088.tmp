@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddld8dxvdjyuo"]
+
+[ext_resource type="Script" uid="uid://bvcoasenxlxvn" path="res://scenes/player_select_local.gd" id="1_006xj"]
+[ext_resource type="PackedScene" uid="uid://b201giqeqb31y" path="res://scenes/simpleCounter.tscn" id="1_bbl22"]
+[ext_resource type="FontFile" uid="uid://dgqgmd8wtphp8" path="res://fonts/comfy_feeling/Comfy Feeling.otf" id="2_7yje4"]
+[ext_resource type="Texture2D" uid="uid://c78426dme6ixt" path="res://assets/pngtree-touch-icon-hand-finger-click-png-image_4872028.png" id="3_p008y"]
+[ext_resource type="Texture2D" uid="uid://bba0854v2w2mo" path="res://assets/4603384.png" id="4_006xj"]
+[ext_resource type="Texture2D" uid="uid://c13drduuvd5h6" path="res://assets/black-check-tick-icon-4.png" id="5_p008y"]
+[ext_resource type="Texture2D" uid="uid://c3ecv8lo5iwjy" path="res://assets/x-png-15.png" id="6_006xj"]
+
+[node name="PlayerSelectLocal" type="Node"]
+script = ExtResource("1_006xj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SimpleCounter" parent="Control" instance=ExtResource("1_bbl22")]
+layout_mode = 1
+
+[node name="Tap" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7yje4")
+theme_override_font_sizes/font_size = 64
+text = "
+Tap to increase"
+horizontal_alignment = 1
+
+[node name="Swipe" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7yje4")
+theme_override_font_sizes/font_size = 64
+text = "Swipe to decrease
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="touch" type="TextureRect" parent="Control"]
+self_modulate = Color(1, 1, 1, 0.156863)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.281
+offset_left = 282.0
+offset_top = 179.0
+offset_right = -125.0
+offset_bottom = 180.32
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("3_p008y")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="swipe" type="TextureRect" parent="Control"]
+self_modulate = Color(1, 1, 1, 0.156863)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.711
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 282.0
+offset_top = -0.0800171
+offset_right = -125.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("4_006xj")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Done" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0.196078)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.448
+anchor_right = 1.0
+anchor_bottom = 0.552
+offset_left = -120.0
+offset_top = -0.440002
+offset_right = -12.0
+offset_bottom = 0.439941
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("5_p008y")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Back" type="Button" parent="Control"]
+self_modulate = Color(0.0745098, 1, 1, 0.196078)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.46
+anchor_bottom = 0.54
+offset_left = 19.0
+offset_top = 0.200012
+offset_right = 102.0
+offset_bottom = -0.200012
+grow_vertical = 2
+icon = ExtResource("6_006xj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="button_down" from="Control/Done" to="." method="_on_done_button_down"]
+[connection signal="button_down" from="Control/Back" to="." method="_on_back_button_down"]

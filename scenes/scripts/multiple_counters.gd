@@ -9,6 +9,9 @@ func _ready() -> void:
 	add_jugadores(numJugadores)
 	
 	
+func init(n) -> void:
+	numJugadores = n
+	
 func add_jugadores(n):
 	
 	if n > 1:

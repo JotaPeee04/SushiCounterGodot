@@ -1,6 +1,6 @@
 extends Control
 
-var counter = 0 
+@export_range(1,8) var counter = 1
 
 var touch_start_position = Vector2.ZERO
 var touch_end_position = Vector2.ZERO
@@ -39,5 +39,9 @@ func _gui_input(event):
 				
 		if counter < 0:
 			counter = 0
-			
+		
+	if counter > 8:
+		counter = 8
+	elif counter <1:
+		counter = 1
 	$Label.text = str(counter)
